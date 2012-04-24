@@ -1,4 +1,4 @@
 Freeroom
 ========
 
-Check if rooms are free at Pollackbacken, Uppsala University 
+A simple tool used to check if rooms are available at Pollackbacken, Uppsala University.  
