@@ -86,7 +86,7 @@ private
     fetch_and_parse_uri(url,/addObject\((\d+)\).*?colspan='3'>Pol_(\d+)/m).each do |r|
         @rooms[r[1].to_i] = Room.new(r[1], r[0]);
     end
-    pp @rooms
+    #pp @rooms
   end
 
   def load_events_from_timeedit(url)
@@ -102,8 +102,10 @@ formUrl = "http://schema.angstrom.uu.se/4DACTION/WebShowSearch/" \
 # Will also need &from=1021&to=1023 where format is YYWW
 icalUrl = "http://schema.angstrom.uu.se/4DACTION/iCal_downloadReservations/" \
           "timeedit.ics?branch=2&lang=1"
-
+# Main program
+puts "Loading schedule..."
 shit = RoomsEvents.new(formUrl, icalUrl)
+puts "Valid room number e.g: 1146"
 while(true)
   print "Enter room number: "
   nr = gets.chomp
